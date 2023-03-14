@@ -4,16 +4,43 @@ using namespace std;
 
 
 int main(){
-	
-	int *a = new int[2];
-	int b = 4;
-	a[0] = 1;
-	// *(a+1) = 2;
-	int bad = 5;
-	int *z = &b;
-	int **p = &z;
+	int t;
+	cin>>t;
+	while(t--){
+		string s;
+		cin>>s;
+		int sum = 0;
+		for(int i = 0; i < s.size() ; i++){
 
-	cout<<*a<<endl;	
+			 if( s[i] == toupper(s[i]) ){
+			 	s[i] = tolower(s[i]);
+			 	sum += (int) s[i]; 
+			}else{
+			 	s[i] = toupper(s[i]);
+			 	sum -= (int) s[i];  
+			}
+		}
 
-	cout<<**p;	
+		sum = abs(sum);
+
+		int flag =0;
+
+		for(int i = 2; i < sum; i++){
+			if(sum % i == 0){
+				flag = 1;
+				break;
+			}
+		}
+		if(flag == 0){
+				cout<<"1"<<endl;
+
+			}else{
+				cout<<"0"<<endl;
+
+			}
+
+		
+		
+		
 	}
+}
