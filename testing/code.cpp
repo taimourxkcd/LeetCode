@@ -3,12 +3,17 @@
 using namespace std;
 
 
-	 const int N = 1e7;
-	int a[N];
-
 int main(){
 	
-	a[0] = 2;
-	cout<< a[0];
+	int *a = new int[2];
+	int b = 4;
+	a[0] = 1;
+	// *(a+1) = 2;
+	int bad = 5;
+	int *z = &b;
+	int **p = &z;
 
-}
+	cout<<*a<<endl;	
+
+	cout<<**p;	
+	}
