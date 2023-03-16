@@ -52,6 +52,6 @@ int main()
 		{
 			std::cout << elem << " ";
 		}
-		cout<<endl;
+		cout << endl;
 	}
 }
