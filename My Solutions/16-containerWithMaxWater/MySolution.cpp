@@ -17,20 +17,20 @@ int main()
 	{
 		int n;
 		cin >> n;
-		vector<int> nums(n);
+		vector<int> height(n);
 
-		for (int i = 0; i < nums.size(); i++)
+		for (int i = 0; i < height.size(); i++)
 		{
-			cin >> nums[i];
+			cin >> height[i];
 		}
 
-		vector<int> result(nums.size() * nums.size());
+		vector<int> result(height.size() * height.size());
 		int k = 0;
 
-		for (int i = 0; i < nums.size(); i++)
+		for (int i = 0; i < height.size(); i++)
 		{
-			for (int j = 0; j < nums.size(); j++) {
-				result[k] = (j - i) * min(nums[i], nums[j]);
+			for (int j = 0; j < height.size(); j++) {
+				result[k] = (j - i) * min(height[i], height[j]);
 				k++;
 			}
 		}
