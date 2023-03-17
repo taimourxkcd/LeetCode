@@ -1,0 +1,10 @@
+not a palindrome
+it is a palindrome
+it is a palindrome
+not a palindrome
+it is a palindrome
+it is a palindrome
+not a palindrome
+it is a palindrome
+it is a palindrome
+it is a palindrome
