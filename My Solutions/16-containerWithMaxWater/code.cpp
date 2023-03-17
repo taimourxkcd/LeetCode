@@ -68,11 +68,8 @@ int main()
 
 		// cout<<sorted[sorted.size()-2];
 
-
 		int distance = sec_high_index - max_index;
-		
 
-		cout<<no * distance<<endl;
-
+		cout << no * distance << endl;
 	}
 }
