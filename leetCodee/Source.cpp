@@ -1,6 +1,8 @@
 #include <iostream>
 #include <algorithm>
 #include <vector>
+#include<unordered_map>
+#include<string>
 using namespace std;
 
 int main()
@@ -15,22 +17,50 @@ int main()
     cin >> t;
     while (t--)
     {
-        int n;
-        cin >> n;
-        vector<int> nums(n);
+        string s;
+        cin >> s;
 
-        for (int i = 0; i < nums.size(); i++)    
-        {
-            cin >> nums[i];
-        }
-        int ans = 0;
-        int maxSum = nums[0], curSum = nums[0];
-        for (int i = 1; i < nums.size(); i++) {
-            ans = curSum + nums[i];
-            curSum = max(nums[i], ans);
-            maxSum = max(maxSum, curSum);
+        unordered_map<int,  char> alphabets;
+
+        int i = 1;
+        for (char c = 'A'; c < 'Z'; c++)   {
+            
+            alphabets.insert(make_pair(i, c));
+            i++;
         }
 
-        cout << maxSum << endl;
+        int count = 0;
+
+        if (s.size() == 2) {
+            int temp = stoi(s);
+
+            int res = temp % 100;
+            if (res > 10 && res <= 26 && s[0] != '0') {
+                count += 2;
+            }
+            else if (s[0] == '0') {
+                
+            }else{
+                count += 1;
+            }
+        }
+        else if(s.size() == 1) {
+            if (s[0] == '0') {
+
+            }
+            else {
+                count += 1;
+            }
+        }
+        else {
+            count += 3;
+        }
+
+
+
+        cout << count << endl;
+
+      
+      
     }
 }
