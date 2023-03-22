@@ -1,15 +1,15 @@
 #include <iostream>
 #include <algorithm>
 #include <vector>
-#include<unordered_map>
-#include<string>
+#include <unordered_map>
+#include <string>
 using namespace std;
 
 int main()
 {
 
-    FILE* inputFile = nullptr;
-    FILE* outputFile = nullptr;
+    FILE *inputFile = nullptr;
+    FILE *outputFile = nullptr;
     freopen_s(&inputFile, "input.txt", "r", stdin);    // Redirect standard input to input.txt
     freopen_s(&outputFile, "output.txt", "w", stdout); // Redirect standard output to output.txt
 
@@ -20,47 +20,47 @@ int main()
         string s;
         cin >> s;
 
-        unordered_map<int,  char> alphabets;
+        if (s.length() < 1)
+            return 0;
 
-        int i = 1;
-        for (char c = 'A'; c < 'Z'; c++)   {
-            
-            alphabets.insert(make_pair(i, c));
-            i++;
+        if (s[0] == '0')
+        {
+            //return 0;
+            cout << "0" << endl;
+            continue;
+        }
+        if (s.length() == 1)
+        {
+            //return 1;
+            cout << "1" << endl;
+            continue;
         }
 
-        int count = 0;
+        int val1 = 1;
+        int val2 = 1;
 
-        if (s.size() == 2) {
-            int temp = stoi(s);
+        for (int i = 1; i < s.length(); i++)
+        {
+            int d1 = s[i] - '0';
+            int d2 = (s[i - 1] - '0') * 10 + d1;
 
-            int res = temp % 100;
-            if (res > 10 && res <= 26 && s[0] != '0') {
-                count += 2;
-            }
-            else if (s[0] == '0') {
-                
-            }else{
-                count += 1;
-            }
-        }
-        else if(s.size() == 1) {
-            if (s[0] == '0') {
+            int val = 0;
 
+            if (d1 >= 1)
+            {
+                val += val2;
             }
-            else {
-                count += 1;
+
+            if (d2 >= 10 && d2 <= 26)
+            {
+                val += val1;
             }
-        }
-        else {
-            count += 3;
+
+            val1 = val2;
+            val2 = val;
+
         }
 
-
-
-        cout << count << endl;
-
-      
-      
+         cout << val2 << endl;
     }
 }
