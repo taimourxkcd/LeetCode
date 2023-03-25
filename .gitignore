@@ -2,6 +2,7 @@ code.exe
 Debug
 leetCodee.sln
 .vs/
+.vscode/settings.json
 leetCodee/Debug
 leetCodee.vcxproj  
 leetCodee.vcxproj.filters
