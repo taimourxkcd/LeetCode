@@ -22,8 +22,9 @@ int main()
             int curr = prev + prev2;
             prev2 = prev;
             prev = curr;
+            cout << prev << " ";
+
         }
 
-        cout << prev << endl;
 
 }
