@@ -19,40 +19,33 @@ int main()
 
     while (t--) {
         
-        string s;
-        getline(cin, s);
-
-        int size = s.size();
-        string ans = "";
-        int count = 0;
+        int x = -321;
+        string s = "";
         int k = 0;
-        for (int i = 0; i < size; i++) {
-            count++;
-            if (s[i] == ' ' || s[i] == '\0') {
-                int j = i-1;
-                while (count-- && j >= 0) {
-                    if (s[j] == ' ') {
-                        //do nothing
-                    }
-                    else {
-                        ans += s[j];
-                    }
-                    j--;
-                    
-                }
+        bool flag;
 
-                  ans += ' ';
-                
-                count = 0;
-            }
-        }
-        // handle the last word
-        int j = size - 1;
-        while (j >= 0 && s[j] != ' ') {
-            ans += s[j];
-            j--;
+
+        if (x < 0) {
+             flag = true;
         }
 
-        cout << ans << endl;
+        x = abs(x);
+        while (x != 0) {
+            int n = x % 10;
+            x = x / 10;
+            s += to_string(n);
+            k++;
+        }
+
+        int ans = stoi(s);
+
+        if (flag == true) {
+            ans -= 2 * ans;
+        }
+
+
+
+
+        cout << ans;
     }
 }
