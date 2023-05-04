@@ -19,25 +19,23 @@ int main()
 
     while (t--) {
         
-        string s = "IDID";
+        string words[] = { "pay","attention","practice","attend" };
+        string pref = "at";
         
-        int n = s.size();
 
-        vector<int> ans;
-
-        int low = 0;
-        int high = n;
-
+        int n = sizeof(words);
+        int count = 0;
         for (int i = 0; i < n; i++) {
-            if (s[i] == 'I') {
-                ans.push_back(low);
-                low++;
-            }
-            else {
-                ans.push_back(high);
-                high--;
+            string temp = words[i];
+            string str = "";
+            for (int j = 0; j < temp.size(); j++) {
+                str += temp[i];
+                if (str == pref) {
+                    count++;
+                }
             }
         }
+        cout <<  count;
 
 
 
