@@ -28,7 +28,7 @@ int main()
         int low = 0;
         int high = n;
 
-        for (int i = 0; i < n; i++) {
+        for (int i = 0; i < n+1; i++) {
             if (s[i] == 'I') {
                 ans.push_back(low);
                 low++;
