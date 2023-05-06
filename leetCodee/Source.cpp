@@ -19,23 +19,53 @@ int main()
 
     while (t--) {
         
-        string words[] = { "pay","attention","practice","attend" };
-        string pref = "at";
-        
+        vector<int> player1 = { 2,3 };
+        vector<int> player2 = { 4,1 };
 
-        int n = sizeof(words);
-        int count = 0;
-        for (int i = 0; i < n; i++) {
-            string temp = words[i];
-            string str = "";
-            for (int j = 0; j < temp.size(); j++) {
-                str += temp[i];
-                if (str == pref) {
-                    count++;
-                }
-            }
+
+        int p1sum = 0;
+        int p2sum = 0;
+
+        int n = player1.size();
+        int n2 = player1.size();
+
+
+        for (int i = 0; i < n - 1; i++) {
+            p1sum += player1[i];
         }
-        cout <<  count;
+
+        int prev = player2[0];
+        int curr = player2[1];
+        bool flag = false;
+
+        for (int i = 0; i < n2; i++) {
+
+            if (flag) {
+                p2sum += player2[i];
+            }
+            else {
+                p2sum += player2[i];
+            }
+
+            if (player2[i] == 10 && flag == false) {
+                p2sum += player2[i];
+                flag = true;
+            }
+
+
+        }
+
+ 
+        if (p1sum > p2sum) {
+            return 1;
+        }
+        else if (p1sum < p2sum) {
+            return 2;
+        }
+        else {
+            return 0;
+        }
+
 
 
 
