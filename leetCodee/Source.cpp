@@ -1,68 +1,75 @@
 #include <iostream>
 #include <algorithm>
 #include <vector>
-#include <unordered_map>
 using namespace std;
 
-class graph {
+class Node
+{
 public:
-    unordered_map<int, list<int>> adj;
+    int data;
+    Node* next;
 
-    void addEdge(int u, int v, bool direction) {
-        // direction = 0 -> undirected
-        // direction = 1 -> directed graph
-
-        //create an edge from u to v
-        adj[u].push_back(v);
-
-        if (direction == 0) {
-            adj[v].push_back(u);
-        }
+    Node(int data)
+    {
+        this->data = data;
+        ;
+        this->next = NULL;
     }
-
-    void printAdjList() {
-        for (auto i : adj) {
-            cout << i.first << "->";
-            for (auto j : i.second) {
-                cout << j << ", ";
-            }
-            cout << endl;
-        }
-    }
-
 };
 
+void insertAtHead(Node*& head, int d)
+{
+    Node* temp = new Node(d);
+    temp->next = head;
+    head = temp;
+}
+
+void print(Node*& head)
+{
+    Node* temp = head;
+
+    while (temp != NULL)
+    {
+        cout << temp->data << " ";
+        temp = temp->next;
+    }
+}
+
+void insertAfterHead(Node*& head, int d)
+{
+    Node* node = new Node(d);
+    Node* temp = head;
+    while (temp->next != NULL)
+    {
+        temp = temp->next;
+    }
+    temp->next = node;
+}
 
 int main()
 {
 
-    FILE *inputFile = nullptr;
-    FILE *outputFile = nullptr;
+    FILE* inputFile = nullptr;
+    FILE* outputFile = nullptr;
     freopen_s(&inputFile, "input.txt", "r", stdin);    // Redirect standard input to input.txt
     freopen_s(&outputFile, "output.txt", "w", stdout); // Redirect standard output to output.txt
 
-    // taking input the no of nodes
-    int n;
-    cin >> n;
+    vector<int> nums = { 0,1,0,3,12 };
 
-    // taking input the no of edges
-    int m;
-    cin >> m;
+    int n = nums.size();
+    int l = 0;
 
-    graph g;
+    for (int i = 0; i < n; i++) {
 
-    for (int i = 0; i < m; i++) {
-        int u, v;
-        cin >> u >> v;
-        g.addEdge(u, v, 0); // 0 means that it is an undirected graph
+        if (nums[l] == 0 && nums[i] != 0) {
+            swap(nums[l], nums[i]);
+
+        }
+
+        if (nums[l] != 0) {
+            l += 1;
+        }
     }
 
-
-    //printing the graph
-    g.printAdjList();
-
     return 0;
-
-
-  
 }
