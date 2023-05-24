@@ -7,7 +7,7 @@ for (auto it = myMap.begin(); it != myMap.end(); ++it)
 		{
 
 			// std::cout << it->second.first << " " << it->second.second << std::endl;
-			v.push_back(it->second.first);
+			v.push_back(it->second.first); // the second item here is a pair. so we are accessing first of that second
 			v.push_back(it->second.second);
 		}
 
