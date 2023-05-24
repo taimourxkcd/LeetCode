@@ -1,50 +1,11 @@
 #include <iostream>
 #include <algorithm>
 #include <vector>
+#include<map>
+#include<unordered_map>
+
 using namespace std;
 
-class Node
-{
-public:
-    int data;
-    Node* next;
-
-    Node(int data)
-    {
-        this->data = data;
-        ;
-        this->next = NULL;
-    }
-};
-
-void insertAtHead(Node*& head, int d)
-{
-    Node* temp = new Node(d);
-    temp->next = head;
-    head = temp;
-}
-
-void print(Node*& head)
-{
-    Node* temp = head;
-
-    while (temp != NULL)
-    {
-        cout << temp->data << " ";
-        temp = temp->next;
-    }
-}
-
-void insertAfterHead(Node*& head, int d)
-{
-    Node* node = new Node(d);
-    Node* temp = head;
-    while (temp->next != NULL)
-    {
-        temp = temp->next;
-    }
-    temp->next = node;
-}
 
 int main()
 {
@@ -54,22 +15,30 @@ int main()
     freopen_s(&inputFile, "input.txt", "r", stdin);    // Redirect standard input to input.txt
     freopen_s(&outputFile, "output.txt", "w", stdout); // Redirect standard output to output.txt
 
-    vector<int> nums = { 0,1,0,3,12 };
+    string s = "III";
+    unordered_map<char, int> mpp;
+    mpp['I'] = 1;
+    mpp['V'] = 5;
+    mpp['X'] = 10;
+    mpp['L'] = 50;
+    mpp['C'] = 100;
+    mpp['D'] = 500;
+    mpp['M'] = 1000;
 
-    int n = nums.size();
-    int l = 0;
 
-    for (int i = 0; i < n; i++) {
+    int n = s.size();
+    int sum = 0;
 
-        if (nums[l] == 0 && nums[i] != 0) {
-            swap(nums[l], nums[i]);
-
-        }
-
-        if (nums[l] != 0) {
-            l += 1;
-        }
+for (int i = 0; i < s.size(); i++){
+    if (s[i + 1] >= s[i]) {
+        sum = mpp[s[i + 1]] + mpp[s[i]];
     }
+    else {
+        sum = mpp[s[i + 1]] - mpp[s[i]];
+    }
+
+}
+    cout << sum;
 
     return 0;
 }

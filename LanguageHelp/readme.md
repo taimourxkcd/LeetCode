@@ -12,10 +12,9 @@ for (auto it = myMap.begin(); it != myMap.end(); ++it)
 		}
 
 
-    if (myMap.find(key) == myMap.end())
-					{
-						myMap.insert({key, {i, j}});
-					}
+  if (myMap.find(key) == myMap.end())	{
+				myMap.insert({key, {i, j}});
+			}
 ```
 ![Map](./assets/map.png)
 
