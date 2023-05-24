@@ -17,7 +17,7 @@ for (auto it = myMap.begin(); it != myMap.end(); ++it)
 						myMap.insert({key, {i, j}});
 					}
 ```
-
+![Map](./assets/map.png)
 
 # Vectors
 
@@ -32,7 +32,7 @@ for (auto it = myMap.begin(); it != myMap.end(); ++it)
   int col = image[0].size();
   vector<vector<int>> ans(row, vector<int>(col));
   ```
-
+![Vector](./assets/vector.png)
 # Sets
 
 ```cpp
@@ -51,12 +51,18 @@ for (auto it = myMap.begin(); it != myMap.end(); ++it)
             if(!mySet2.count(n)) ans[0].push_back(n); //Count(n) checks if element n is present in the set
         }
 ```
-# Iteration shortcut 
-  ```cpp  
- for (auto n : nums){
-    }
-    // works for sets too
-```
+![Set](./assets/set.png)
+
+
+# Stack
+![Stack](./assets/stack.png)
+
+
+# Queue
+![Queue](./assets/queue.png)
+
+# String
+![String](./assets/string.png)
 
 # important functions
 ```cpp
@@ -64,5 +70,12 @@ toupper(s[i])
 s[i] = tolower(s[i]);
 sort(nums.begin(), nums.end());
 to_string(i);
+```
 
+
+# Iteration shortcut 
+  ```cpp  
+ for (auto n : nums){
+    }
+    // works for sets too
 ```
