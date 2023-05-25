@@ -6,6 +6,18 @@
 
 using namespace std;
 
+int rob(vector<int>& nums) {
+    int prev1 = 0;
+    int prev2 = 0;
+
+    for (const int num : nums) {
+        const int dp = max(prev1, prev2 + num);
+        prev2 = prev1;
+        prev1 = dp;
+    }
+
+    return prev1;
+}
 
 int main()
 {
@@ -15,30 +27,11 @@ int main()
     freopen_s(&inputFile, "input.txt", "r", stdin);    // Redirect standard input to input.txt
     freopen_s(&outputFile, "output.txt", "w", stdout); // Redirect standard output to output.txt
 
-    string s = "III";
-    unordered_map<char, int> mpp;
-    mpp['I'] = 1;
-    mpp['V'] = 5;
-    mpp['X'] = 10;
-    mpp['L'] = 50;
-    mpp['C'] = 100;
-    mpp['D'] = 500;
-    mpp['M'] = 1000;
+    
 
 
-    int n = s.size();
-    int sum = 0;
-
-for (int i = 0; i < s.size(); i++){
-    if (s[i + 1] >= s[i]) {
-        sum = mpp[s[i + 1]] + mpp[s[i]];
-    }
-    else {
-        sum = mpp[s[i + 1]] - mpp[s[i]];
-    }
-
-}
-    cout << sum;
-
+    vector<int> nums = { 1 , 2, 3, 1 };
+    rob(nums);
+         
     return 0;
 }
