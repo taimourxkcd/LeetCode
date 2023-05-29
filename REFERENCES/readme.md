@@ -32,3 +32,9 @@ dp1, lru
 coding minutes bootcamp: [Link](https://github.com/riti2409/data-structures-algorithms-level-up-bootcamp)
 
 
+
+array, backtracking, dp, heap, LL, Recursion, Strings
+Love-Babbar-DSA-Cracker-Sheet-Solutions: [Link](https://github.com/Ayu-99/Love-Babbar-DSA-Cracker-Sheet-Solutions/tree/main/C%2B%2B)
+
+
+
