@@ -69,6 +69,8 @@ toupper(s[i])
 s[i] = tolower(s[i]);
 sort(nums.begin(), nums.end());
 to_string(i);
+sort(matchsticks.begin(), matchsticks.end(), greater<int>()); // sort in decreasing order
+
 ```
 
 
