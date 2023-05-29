@@ -3,21 +3,12 @@
 #include <vector>
 #include<map>
 #include<unordered_map>
+#include<stack>
+
 
 using namespace std;
 
-int rob(vector<int>& nums) {
-    int prev1 = 0;
-    int prev2 = 0;
 
-    for (const int num : nums) {
-        const int dp = max(prev1, prev2 + num);
-        prev2 = prev1;
-        prev1 = dp;
-    }
-
-    return prev1;
-}
 
 int main()
 {
@@ -27,11 +18,26 @@ int main()
     freopen_s(&inputFile, "input.txt", "r", stdin);    // Redirect standard input to input.txt
     freopen_s(&outputFile, "output.txt", "w", stdout); // Redirect standard output to output.txt
 
+    int num = 1234;
+
+    stack<int> stk;
+    int n = num;
     
+    while (n != 0) {
+        stk.push(n % 10);
+        n = n / 10;
+    }
+
+    int i = 1;
+    int rev = 0;
+    while (!stk.empty()) {
+        rev = rev + (stk.top() * i);
+        stk.pop();
+        i *= 10;
+    }
 
 
-    vector<int> nums = { 1 , 2, 3, 1 };
-    rob(nums);
+    cout << rev;
          
     return 0;
 }
