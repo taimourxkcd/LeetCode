@@ -63,6 +63,7 @@ for (auto it = myMap.begin(); it != myMap.end(); ++it)
 # String
 ![String](./assets/string.png)
 
+
 # important functions
 ```cpp
 toupper(s[i])
@@ -70,6 +71,7 @@ s[i] = tolower(s[i]);
 sort(nums.begin(), nums.end());
 to_string(i);
 sort(matchsticks.begin(), matchsticks.end(), greater<int>()); // sort in decreasing order
+ reverse(nums.begin(), nums.end()); // for vector
 
 ```
 

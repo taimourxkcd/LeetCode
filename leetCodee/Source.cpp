@@ -18,26 +18,18 @@ int main()
     freopen_s(&inputFile, "input.txt", "r", stdin);    // Redirect standard input to input.txt
     freopen_s(&outputFile, "output.txt", "w", stdout); // Redirect standard output to output.txt
 
-    int num = 1234;
+    int n = 16;
+    int p = 0;
 
-    stack<int> stk;
-    int n = num;
-    
-    while (n != 0) {
-        stk.push(n % 10);
-        n = n / 10;
+    int num = 1;
+    while (num <= n) {
+        num = num * 2;
+        if (num == n) return true;
+
+        p = p + 1;
     }
 
-    int i = 1;
-    int rev = 0;
-    while (!stk.empty()) {
-        rev = rev + (stk.top() * i);
-        stk.pop();
-        i *= 10;
-    }
+    cout<< false;
 
-
-    cout << rev;
-         
     return 0;
 }
