@@ -9,6 +9,20 @@
 using namespace std;
 
 
+int transformCount(int num) {
+    int count = 0;
+    while (num != 1) {
+        if (num % 2 == 0) {
+            num = num / 2;
+        }
+        else {
+            num = (3 * num) + 1;
+        }
+        count++;
+    }
+    return count;
+}
+
 
 int main()
 {
@@ -18,102 +32,25 @@ int main()
     freopen_s(&inputFile, "input.txt", "r", stdin);    // Redirect standard input to input.txt
     freopen_s(&outputFile, "output.txt", "w", stdout); // Redirect standard output to output.txt
 
-    unordered_map<int, string> mpp; 
-    mpp[1] = "I";
-    mpp[4] = "IV";
-    mpp[5] = "V";
-    mpp[9] = "IX";
-    mpp[10] = "X";
-    mpp[40] = "XL";
-    mpp[50] = "L";
-    mpp[90] = "XC";
-    mpp[100] = "C";
-    mpp[400] = "CD";
-    mpp[500] = "D";
-    mpp[900] = "CM";
-    mpp[1000] = "M";
 
-    string ans = "";
+    int lo = 7, hi = 11, k = 5;
 
-    int num = 51531516;
+  
 
-    if (num >= 1000) {
-        int cnt = num / 1000;
-        while (cnt--) {
-            ans += mpp[1000];
+        vector<pair<int, int>> ans; // pair of (power value, integer value)
+        for (int i = lo; i <= hi; i++) {
+            int c = transformCount(i);
+            ans.push_back({ c, i });
         }
-        num = num % 1000;
-    }
 
-    if (num >= 900) {
-        ans += mpp[900];
-        num = num % 900;
-    }
+        sort(ans.begin(), ans.end(), [](const pair<int, int>& a, const pair<int, int>& b) {
+            if (a.first == b.first) {
+                return a.second < b.second;
+            }
+            return a.first < b.first;
+            });
 
-    if (num >= 500) {
-        ans += mpp[500];
-        num = num % 500;
-    }
-
-    if (num >= 400) {
-        ans += mpp[400];
-        num = num % 400;
-    }
-
-    if (num >= 100) {
-        int cnt = num / 100;
-        while (cnt--) {
-            ans += mpp[100];
-        }
-        num = num % 100;
-    }
-
-    if (num >= 90) {
-        ans += mpp[90];
-        num = num % 90;
-    }
-
-    if (num >= 50) {
-        ans += mpp[50];
-        num = num % 50;
-    }
-
-    if (num >= 40) {
-        ans += mpp[40];
-        num = num % 40;
-    }
-
-    if (num >= 10) {
-        int cnt = num / 10;
-        while (cnt--) {
-            ans += mpp[10];
-        }
-        num = num % 10;
-    }
-
-    if (num >= 9) {
-        ans += mpp[9];
-        num = num % 9;
-    }
-
-    if (num >= 5) {
-        ans += mpp[5];
-        num = num % 5;
-    }
-
-    if (num >= 4) {
-        ans += mpp[4];
-        num = num % 4;
-    }
-
-    if (num >= 1) {
-        int cnt = num;
-        while (cnt--) {
-            ans += mpp[1];
-        }
-    }
-
-    cout << ans;
+        return ans[k - 1].second;
 
     return 0;
 }

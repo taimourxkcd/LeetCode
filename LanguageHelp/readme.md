@@ -30,6 +30,9 @@ for (auto it = myMap.begin(); it != myMap.end(); ++it)
   int row = image.size();
   int col = image[0].size();
   vector<vector<int>> ans(row, vector<int>(col));
+
+  vector<pair<int, int>> ans;
+  ans.push_back({c, i}); 
   ```
 ![Vector](./assets/vector.png)
 # Sets
