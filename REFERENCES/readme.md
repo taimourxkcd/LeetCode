@@ -1,5 +1,11 @@
 # QUICK LINKS
 
+includes questions from Advanced Data Structures, Array, Backtracking, Bit Manipulation,Disjoint Set Union, Divide And Conquer Algorithms
+Dynamic Programming, Extra, Graph Algorithms, Graphs, Greedy Algorithms, HashMap, HashTable, Heap, Linked List, Mathematical Algorithms
+Miscellaneous, Priority Queue, Queue, Recursion, STL, Searching Algorithms, Sets, Sorting Algorithms, Stack, String Algorithms, Strings
+Template, Tree, Trie
+LEARN CPP: [Link](https://github.com/Lakhankumawat/LearnCPP)
+
 
 CPP HELP: [Link](https://github.com/ntuorangejuice/cheat-sheet)
 
