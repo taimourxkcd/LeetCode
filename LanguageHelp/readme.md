@@ -15,6 +15,13 @@ for (auto it = myMap.begin(); it != myMap.end(); ++it)
   if (myMap.find(key) == myMap.end())	{
 				myMap.insert({key, {i, j}});
 			}
+
+
+    for(const auto& num : map1){
+        if(num.second == 2) ans.push_back(num.first);
+    }
+
+     for(int i : nums) map1[i]++; // find occurences
 ```
 ![Map](./assets/map.png)
 
