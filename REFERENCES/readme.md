@@ -43,4 +43,6 @@ array, backtracking, dp, heap, LL, Recursion, Strings
 Love-Babbar-DSA-Cracker-Sheet-Solutions: [Link](https://github.com/Ayu-99/Love-Babbar-DSA-Cracker-Sheet-Solutions/tree/main/C%2B%2B)
 
 
+Data Structures in C: [Link](https://github.com/najm09/DataStructure)
+
 
