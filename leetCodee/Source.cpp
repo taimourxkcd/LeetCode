@@ -1,28 +1,9 @@
 #include <iostream>
 #include <algorithm>
 #include <vector>
-#include<map>
-#include<unordered_map>
-#include<stack>
-
-
+#include <unordered_map>
+#include <string>
 using namespace std;
-
-
-int transformCount(int num) {
-    int count = 0;
-    while (num != 1) {
-        if (num % 2 == 0) {
-            num = num / 2;
-        }
-        else {
-            num = (3 * num) + 1;
-        }
-        count++;
-    }
-    return count;
-}
-
 
 int main()
 {
@@ -32,25 +13,56 @@ int main()
     freopen_s(&inputFile, "input.txt", "r", stdin);    // Redirect standard input to input.txt
     freopen_s(&outputFile, "output.txt", "w", stdout); // Redirect standard output to output.txt
 
+    int t;
+    cin >> t;
+    while (t--)
+    {
+        int n;
+        cin >> n;
 
-    int lo = 7, hi = 11, k = 5;
+        int* nums = new int[n];
 
-  
-
-        vector<pair<int, int>> ans; // pair of (power value, integer value)
-        for (int i = lo; i <= hi; i++) {
-            int c = transformCount(i);
-            ans.push_back({ c, i });
+        for (int i = 0; i < n; i++)
+        {
+            cin >> nums[i];
         }
 
-        sort(ans.begin(), ans.end(), [](const pair<int, int>& a, const pair<int, int>& b) {
-            if (a.first == b.first) {
-                return a.second < b.second;
+        int target;
+        cin >> target;
+
+        int mid = 0;
+        int left = 0;
+        int flag = 0;
+        int right = n - 1;
+
+        for (int i = 0; i < n; i++)
+        {
+            mid = (left + right) / 2;
+
+            if (nums[mid] < target)
+            {
+                left = mid + 1;
             }
-            return a.first < b.first;
-            });
+            else if (nums[mid] > target)
+            {
+                right = mid;
+            }
+            else if (nums[mid] == target)
+            {
+                // cout << "ELEMENT FOUND AT" << mid<< endl;
+                flag = 1;
+                break;
+            }
+        }
 
-        return ans[k - 1].second;
+        if (flag == 1)
+        {
+            cout << "Found at index " << mid << endl;
+        }
+        else
+        {
+            cout << "Not found" << endl;
 
-    return 0;
+        }
+    }
 }
