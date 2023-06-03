@@ -92,3 +92,24 @@ sort(matchsticks.begin(), matchsticks.end(), greater<int>()); // sort in decreas
     }
     // works for sets too
 ```
+
+
+# Pairs 
+  ```cpp  
+//   use as a function
+ pair<int, int> diameterFast(TreeNode *root)
+    {
+        // base case
+        if (root == NULL)
+        {
+            pair<int, int> p = make_pair(0, 0);
+            return p;
+        }
+
+        return ans;
+    }
+
+    // normal use 
+     pair<int, int> result = diameterFast(root);
+
+```
