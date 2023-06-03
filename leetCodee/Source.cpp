@@ -108,12 +108,13 @@ int main()
     Node* root = NULL;
 
     root = buildTree(root);
-    levelOrderTraversal(root);
-    cout << endl;
-    inOrderTraversal(root);
-    cout << endl;
+  /*  levelOrderTraversal(root);
+    cout << endl;*/
+    //inOrderTraversal(root);
+   /* cout << endl;
     preTraversal(root);
-    cout << endl;
+    cout << endl; */
+
     postTraversal(root);
 
     return 0;
