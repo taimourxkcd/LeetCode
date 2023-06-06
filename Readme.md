@@ -1,5 +1,5 @@
 # INFO
- Explanations from question 16 onwards
+ Explanations with questions inside My Solutions Folder 
 
  # Websites
  - https://visualgo.net/en
