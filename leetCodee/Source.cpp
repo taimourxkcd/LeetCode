@@ -87,15 +87,26 @@ int main()
     freopen_s(&inputFile, "input.txt", "r", stdin);    // Redirect standard input to input.txt
     freopen_s(&outputFile, "output.txt", "w", stdout); // Redirect standard output to output.txt
 
-    vector<int> arr = {1, 3, 47, 5, 1, 8, 5};
-    int s = 0;
-    int e = arr.size() - 1;
-    mergeSort(arr, s, e);
+    vector<int> nums = { 1,3,5,2,4,8,2,2 };
+    if (nums.size() == 1) return nums[0];
 
-    for (int i : arr)
-    {
-        cout << i << " ";
+
+    int i = 0;
+    while (nums.size() != 1) {
+
+        int n = nums.size() / 2;
+        vector<int> ans(n);
+
+        for (int i = 0; i < ans.size(); i++) {
+            if (i % 2 == 0) {
+                ans[i] = min(nums[2 * i], nums[2 * i + 1]);
+            }
+            else {
+                ans[i] = max(nums[2 * i], nums[2 * i + 1]);
+            }
+        }
+        copy(ans.begin(), ans.end(), nums.begin());
     }
+    cout << nums[0];
 
-    return 0;
 }

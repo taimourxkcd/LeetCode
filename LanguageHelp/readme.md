@@ -40,6 +40,12 @@ for (auto it = myMap.begin(); it != myMap.end(); ++it)
 
   vector<pair<int, int>> ans;
   ans.push_back({c, i}); 
+
+    // copy ans vector into nums
+    copy(ans.begin(), ans.end(), nums.begin());         
+    // reseize a vector to a new size
+    nums.resize(n);
+
   ```
 ![Vector](./assets/vector.png)
 # Sets
