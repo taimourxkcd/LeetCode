@@ -87,26 +87,31 @@ int main()
     freopen_s(&inputFile, "input.txt", "r", stdin);    // Redirect standard input to input.txt
     freopen_s(&outputFile, "output.txt", "w", stdout); // Redirect standard output to output.txt
 
-    vector<int> nums = { 1,3,5,2,4,8,2,2 };
-    if (nums.size() == 1) return nums[0];
+    vector<int> nums = { 1,3,5,6 };
 
+    
+       
+            int l = 0, r = nums.size() - 1;
+            int target = 7;
 
-    int i = 0;
-    while (nums.size() != 1) {
+            int i = 0;
+            while (l <= r) {
+                int mid = (l + r) / 2;
+                if (nums[mid] == target) return mid;
+                i++;
 
-        int n = nums.size() / 2;
-        vector<int> ans(n);
-
-        for (int i = 0; i < ans.size(); i++) {
-            if (i % 2 == 0) {
-                ans[i] = min(nums[2 * i], nums[2 * i + 1]);
+                if (nums[mid] < target) {
+                    l = mid + 1;
+                }
+                else {
+                    r = mid - 1;
+                    i = mid;
+                }
             }
-            else {
-                ans[i] = max(nums[2 * i], nums[2 * i + 1]);
-            }
-        }
-        copy(ans.begin(), ans.end(), nums.begin());
-    }
-    cout << nums[0];
+
+            cout<< i;
+
+
+    
 
 }
