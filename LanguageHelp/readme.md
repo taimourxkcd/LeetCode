@@ -33,6 +33,8 @@ for (auto it = myMap.begin(); it != myMap.end(); ++it)
   vector<vector<int>> nums(n, vector<int>(n));
   vector<vector<int>> ans(2, vector<int>());
   vector<long long> nums(n);
+  vector<vector<int>> res = { {1, 2, 3}, {2, 5, 6}, {1, 2, 3} };
+
 
   int row = image.size();
   int col = image[0].size();
