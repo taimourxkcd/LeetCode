@@ -8,41 +8,32 @@ class Node
 public:
     int data;
     Node* next;
+    Node* prev;
+
 
     Node(int data)
     {
         this->data = data;
-        ;
         this->next = NULL;
+        this->prev = NULL;
     }
 
-    ~Node() {
+    ~Node()
+    {
         int value = this->data;
-        if (this->next != NULL) {
-            delete(next);
+        if (this->next != NULL)
+        {
+            delete (next);
             this->next = NULL;
+            this->prev = NULL;
         }
-        cout << endl << "memory free with data " << value << endl;
+        cout << endl
+            << "memory free with data " << value << endl;
     }
+
+  
 };
 
-void insertAtHead(Node*& head, int d)
-{
-    Node* temp = new Node(d);
-    temp->next = head;
-    head = temp;
-}
-
-void insertAtTail(Node*& head, int d)
-{
-    Node* node = new Node(d);
-    Node* temp = head;
-    while (temp->next != NULL) {
-        temp = temp->next;
-    }
-    temp->next = node;
-    node->next = NULL;
-}
 void print(Node*& head)
 {
     Node* temp = head;
@@ -54,51 +45,82 @@ void print(Node*& head)
     }
 }
 
-void insertAfterHead(Node*& head, int d)
-{
-    Node* node = new Node(d);
-    Node* next = head->next;
+void insertAtHead(Node*& head, int d) {
 
-    head->next = node;
-    node->next = next;
+    Node* temp = new Node(d);
+    temp->next = head;
+    head->prev = temp;
+    head = temp;
+
 }
 
-void insertAtPosition(Node* &head,  int position, int d) {
+void insertAtTail(Node*& head, int d) {
 
-    //edge case, insert at start position
-    if (position == 1) {
+    Node* temp = new Node(d);
+    Node* curr = head;
+    Node* prev = NULL;
+
+    while (curr->next != NULL)
+    {
+        prev = curr;
+        curr = curr->next;
+    }
+
+    curr->next = temp;
+    temp->prev = curr;
+    temp->next = NULL;
+
+
+}
+
+void insertAtPosition(Node*& head, int position, int d) {
+    // edge case, insert at start position
+    if (position == 1)
+    {
         insertAtHead(head, d);
-
         return;
     }
-    Node* temp = head;
+    Node* curr = head;
+    Node* prev = NULL;
+
     int cnt = 1;
 
-    while (cnt < position - 1) {
-        temp = temp->next;
+    while (cnt < position )
+    {
+        prev = curr;
+        curr = curr->next;
         cnt++;
     }
 
     Node* nodeToInsert = new Node(d);
 
-    //edge case, insert at last position
-    if (temp->next == NULL) {
+    // edge case, insert at last position
+    if (curr->next == NULL)
+    {
         insertAtTail(head, d);
         return;
     }
 
-    nodeToInsert->next = temp->next;
-    temp->next = nodeToInsert;
+    prev->next = nodeToInsert;
+    nodeToInsert->prev = prev;
+    nodeToInsert->next = curr->next;
+    Node* nxt = curr->next;
+    nxt->prev = nodeToInsert;
 }
 
-void deleteAtPosition(Node* &head, int position) {
+void deleteAtPosition(Node*& head, int position)
+{
 
     // edge case, if you need to delete head
-    if (position == 1) {
+    if (position == 1)
+    {
         Node* temp = head;
+        Node* nxt = head->next;
         head = head->next;
+        head->prev = NULL;
+        
         temp->next = NULL;
-        delete temp ;
+        delete temp;
         return;
     }
 
@@ -106,16 +128,18 @@ void deleteAtPosition(Node* &head, int position) {
     Node* prev = NULL;
 
     int cnt = 1;
-    while (cnt < position ) {
+    while (cnt < position)
+    {
         prev = curr;
         curr = curr->next;
         cnt++;
     }
 
     prev->next = curr->next;
+    Node* nxt = curr->next;
+    nxt->prev = prev;
     curr->next = NULL;
     delete curr;
-
 }
 
 int main()
@@ -126,17 +150,26 @@ int main()
     freopen_s(&inputFile, "input.txt", "r", stdin);    // Redirect standard input to input.txt
     freopen_s(&outputFile, "output.txt", "w", stdout); // Redirect standard output to output.txt
 
-    Node* head = new Node(10);
+    Node* head = new Node(1);
     insertAtHead(head, 2);
-    insertAtHead(head, 21);
-    insertAfterHead(head, 333);
-    insertAtHead(head, 31);
-    insertAtTail(head, 99);
-    insertAtPosition(head, 7, 0);
+    insertAtHead(head, 3);
+    insertAtPosition(head, 3, 222);
+    insertAtPosition(head, 1, 0);
+
+
+    insertAtTail(head, 0);
+    insertAtTail(head, 4);
+
+    insertAtTail(head, 10);
+
+    insertAtPosition(head, 8, 99);
     print(head);
-    deleteAtPosition(head, 7);
-    
-    cout << endl;
+
+    deleteAtPosition(head, 3);
+
+
+
+
 
     print(head);
 
