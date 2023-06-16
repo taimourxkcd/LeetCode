@@ -8,14 +8,12 @@ class Node
 public:
     int data;
     Node* next;
-    Node* prev;
 
 
     Node(int data)
     {
         this->data = data;
         this->next = NULL;
-        this->prev = NULL;
     }
 
     ~Node()
@@ -24,8 +22,8 @@ public:
         if (this->next != NULL)
         {
             delete (next);
-            this->next = NULL;
-            this->prev = NULL;
+            next = NULL;
+            
         }
         cout << endl
             << "memory free with data " << value << endl;
@@ -34,113 +32,87 @@ public:
   
 };
 
-void print(Node*& head)
-{
-    Node* temp = head;
 
-    while (temp != NULL)
-    {
+
+void insertNode(Node*& tail, int element, int d) {
+    //empty list
+    if (tail == NULL) {
+        Node* newNode = new Node(d);
+        tail = newNode;
+        newNode->next = newNode;
+        return;
+    }
+    else {
+     //non-empty list 
+     //assuming that the element is present in the list 
+        Node* curr = tail;
+
+        while (curr->data != element) {
+            curr = curr->next;
+        }
+
+        //element found and curr is representing the element
+        Node* temp = new Node(d);
+        temp->next = curr->next;
+        curr->next = temp;
+    }
+
+}
+
+void deleteNode(Node* &tail, int d) {
+    
+    //empty list 
+    if (tail == NULL) {
+        return;
+    }
+    else {
+        Node* prev = tail;
+        Node* curr = prev->next;
+
+        while (curr->data != d) {
+            prev = curr;
+            curr = curr->next;
+        }
+
+        prev->next = curr->next;
+        //1 Node Linked list
+        if (curr == prev) {
+            tail = NULL;
+        }
+
+        //>=2 Node linked list
+        else if (tail == curr) {
+            tail = prev;  
+        }
+    
+         curr->next = NULL;
+         delete curr;
+
+        //edge case
+        
+     
+    }
+
+    
+}
+
+
+void print(Node* tail)
+{
+    Node* temp = tail;
+
+    if (tail == NULL) return;
+
+    do {
         cout << temp->data << " ";
         temp = temp->next;
-    }
+
+    } while (tail != temp);
+
+    
 }
 
-void insertAtHead(Node*& head, int d) {
 
-    Node* temp = new Node(d);
-    temp->next = head;
-    head->prev = temp;
-    head = temp;
-
-}
-
-void insertAtTail(Node*& head, int d) {
-
-    Node* temp = new Node(d);
-    Node* curr = head;
-    Node* prev = NULL;
-
-    while (curr->next != NULL)
-    {
-        prev = curr;
-        curr = curr->next;
-    }
-
-    curr->next = temp;
-    temp->prev = curr;
-    temp->next = NULL;
-
-
-}
-
-void insertAtPosition(Node*& head, int position, int d) {
-    // edge case, insert at start position
-    if (position == 1)
-    {
-        insertAtHead(head, d);
-        return;
-    }
-    Node* curr = head;
-    Node* prev = NULL;
-
-    int cnt = 1;
-
-    while (cnt < position )
-    {
-        prev = curr;
-        curr = curr->next;
-        cnt++;
-    }
-
-    Node* nodeToInsert = new Node(d);
-
-    // edge case, insert at last position
-    if (curr->next == NULL)
-    {
-        insertAtTail(head, d);
-        return;
-    }
-
-    prev->next = nodeToInsert;
-    nodeToInsert->prev = prev;
-    nodeToInsert->next = curr->next;
-    Node* nxt = curr->next;
-    nxt->prev = nodeToInsert;
-}
-
-void deleteAtPosition(Node*& head, int position)
-{
-
-    // edge case, if you need to delete head
-    if (position == 1)
-    {
-        Node* temp = head;
-        Node* nxt = head->next;
-        head = head->next;
-        head->prev = NULL;
-        
-        temp->next = NULL;
-        delete temp;
-        return;
-    }
-
-    Node* curr = head;
-    Node* prev = NULL;
-
-    int cnt = 1;
-    while (cnt < position)
-    {
-        prev = curr;
-        curr = curr->next;
-        cnt++;
-    }
-
-    prev->next = curr->next;
-    Node* nxt = curr->next;
-    nxt->prev = prev;
-    curr->next = NULL;
-    delete curr;
-}
 
 int main()
 {
@@ -150,28 +122,17 @@ int main()
     freopen_s(&inputFile, "input.txt", "r", stdin);    // Redirect standard input to input.txt
     freopen_s(&outputFile, "output.txt", "w", stdout); // Redirect standard output to output.txt
 
-    Node* head = new Node(1);
-    insertAtHead(head, 2);
-    insertAtHead(head, 3);
-    insertAtPosition(head, 3, 222);
-    insertAtPosition(head, 1, 0);
+    Node* tail = NULL;
+    insertNode(tail, 3, 5);
+  /*  insertNode(tail, 5, 3);
+    insertNode(tail, 5, 7);
+    insertNode(tail, 7, 9);
+    insertNode(tail, 3, 2);*/
 
-
-    insertAtTail(head, 0);
-    insertAtTail(head, 4);
-
-    insertAtTail(head, 10);
-
-    insertAtPosition(head, 8, 99);
-    print(head);
-
-    deleteAtPosition(head, 3);
-
-
-
-
-
-    print(head);
+    print(tail);
+    cout << endl;
+    deleteNode(tail, 5);
+    print(tail);
 
     return 0;
 }
