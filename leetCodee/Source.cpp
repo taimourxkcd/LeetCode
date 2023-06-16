@@ -1,105 +1,144 @@
 #include <iostream>
 #include <algorithm>
 #include <vector>
-#include <unordered_map>
-#include <string>
-#include <queue>
 using namespace std;
 
-void merge(vector<int> &arr, int s, int e)
+class Node
 {
+public:
+    int data;
+    Node* next;
 
-    // calculatiing the mid and the length of arr 1 and 2 
-    int mid = (s + e) / 2;
-    int len1 = mid - s + 1;
-    int len2 = e - mid;
-
-    // creating two new vectors based on the length we calculated
-    vector<int> first(len1);
-    vector<int> second(len2);
-
-
-    // copying the values from the original array intot the newly created array
-    int k = s;
-    for (int i = 0; i < len1; i++)
+    Node(int data)
     {
-        first[i] = arr[k++];
+        this->data = data;
+        ;
+        this->next = NULL;
     }
 
-    k = mid + 1;
-    for (int i = 0; i < len2; i++)
-    {
-        second[i] = arr[k++];
-    }
-
-    // merging and sorting the two newly created arrays
-    int index1 = 0;
-    int index2 = 0;
-    k = s;
-
-    // going as long as both remain true. inevitably, at the end one of the indexes would reach the end first. 
-    // so we handle the case later
-
-    while (index1 < len1 && index2 < len2)
-    {
-        if (first[index1] < second[index2])
-        {
-            arr[k++] = first[index1++];
+    ~Node() {
+        int value = this->data;
+        if (this->next != NULL) {
+            delete(next);
+            this->next = NULL;
         }
-        else
-        {
-            arr[k++] = second[index2++];
-        }
+        cout << endl << "memory free with data " << value << endl;
     }
+};
 
-    // here we check that for the index which was not able to complete in the last while loop to
-    //  copy the remaining elements from the original array to the new array
-    while (index1 < len1)
-    {
-        arr[k++] = first[index1++];
+void insertAtHead(Node*& head, int d)
+{
+    Node* temp = new Node(d);
+    temp->next = head;
+    head = temp;
+}
+
+void insertAtTail(Node*& head, int d)
+{
+    Node* node = new Node(d);
+    Node* temp = head;
+    while (temp->next != NULL) {
+        temp = temp->next;
     }
+    temp->next = node;
+    node->next = NULL;
+}
+void print(Node*& head)
+{
+    Node* temp = head;
 
-    while (index2 < len2)
+    while (temp != NULL)
     {
-        arr[k++] = second[index2++];
+        cout << temp->data << " ";
+        temp = temp->next;
     }
 }
 
-void mergeSort(vector<int> &arr, int s, int e)
+void insertAfterHead(Node*& head, int d)
 {
-    if (s >= e)
-    {
+    Node* node = new Node(d);
+    Node* next = head->next;
+
+    head->next = node;
+    node->next = next;
+}
+
+void insertAtPosition(Node* &head,  int position, int d) {
+
+    //edge case, insert at start position
+    if (position == 1) {
+        insertAtHead(head, d);
+
+        return;
+    }
+    Node* temp = head;
+    int cnt = 1;
+
+    while (cnt < position - 1) {
+        temp = temp->next;
+        cnt++;
+    }
+
+    Node* nodeToInsert = new Node(d);
+
+    //edge case, insert at last position
+    if (temp->next == NULL) {
+        insertAtTail(head, d);
         return;
     }
 
-    int mid = (s + e) / 2;
+    nodeToInsert->next = temp->next;
+    temp->next = nodeToInsert;
+}
 
-    mergeSort(arr, s, mid);
-    mergeSort(arr, mid + 1, e);
+void deleteAtPosition(Node* &head, int position) {
 
-    merge(arr, s, e);
+    // edge case, if you need to delete head
+    if (position == 1) {
+        Node* temp = head;
+        head = head->next;
+        temp->next = NULL;
+        delete temp ;
+        return;
+    }
+
+    Node* curr = head;
+    Node* prev = NULL;
+
+    int cnt = 1;
+    while (cnt < position ) {
+        prev = curr;
+        curr = curr->next;
+        cnt++;
+    }
+
+    prev->next = curr->next;
+    curr->next = NULL;
+    delete curr;
+
 }
 
 int main()
 {
-    FILE *inputFile = nullptr;
-    FILE *outputFile = nullptr;
+
+    FILE* inputFile = nullptr;
+    FILE* outputFile = nullptr;
     freopen_s(&inputFile, "input.txt", "r", stdin);    // Redirect standard input to input.txt
     freopen_s(&outputFile, "output.txt", "w", stdout); // Redirect standard output to output.txt
 
+    Node* head = new Node(10);
+    insertAtHead(head, 2);
+    insertAtHead(head, 21);
+    insertAfterHead(head, 333);
+    insertAtHead(head, 31);
+    insertAtTail(head, 99);
+    insertAtPosition(head, 7, 0);
+    print(head);
+    deleteAtPosition(head, 7);
+    
+    cout << endl;
 
-    vector<int> nums = { 1,1,2,3,3,4,4,8,8 };
-    int n = 0;
-    for (int i = 0; i < nums.size() - 1; i++) {
-        if (nums[i] != nums[i + 1]) {
-            n = nums[i];
-            break;
-        }
-    }
+    print(head);
 
-
-    cout << n;
-
-
- 
+    return 0;
 }
