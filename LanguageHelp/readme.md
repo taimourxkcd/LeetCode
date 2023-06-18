@@ -81,6 +81,17 @@ for (auto it = myMap.begin(); it != myMap.end(); ++it)
 # String
 ![String](./assets/string.png)
 
+# Graph
+- creating an adjacency matrix
+  ```
+   vector<vector<int>> times = { {1,1,1}  ,{2,1,3} ,{3,4,1} };
+   unordered_map<int, vector<pair<int, int>>> map;
+
+    for (vector<int> data : times) {
+        map[data[0]].push_back({ data[1], data[2] });
+    }
+
+  ```
 
 # important functions
 ```cpp
