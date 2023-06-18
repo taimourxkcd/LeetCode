@@ -21,12 +21,12 @@ int main()
 
    
 
-    vector<int> vec = { 1, 2, 3, 4, 5, 6};
-
-    bool res = binary_search(vec.begin(), vec.end(), 653);
-    if (res) cout << "yes";
-
-
+    set<int> sett = { 1, 2, 3, 4, 5, 6};
+    int a = 5;
+    for (auto n : sett) {
+       
+    }
+    if (sett.count(5) > 0) cout << "present in the set";
 
 
 

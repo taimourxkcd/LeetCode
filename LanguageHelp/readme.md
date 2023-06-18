@@ -54,23 +54,6 @@ for (auto it = myMap.begin(); it != myMap.end(); ++it)
   ```
 ![Vector](./assets/vector.png)
 # Sets
-
-```cpp
-   set<int> mySet1;
-     mySet1.insert(nums1[i]);
----
-    set<char> uniqueChars;
-
-        // Insert each character of the string into the set
-        for (char c : sentence)
-        {
-            uniqueChars.insert(c);
-        }
-
-        for(auto n:mySet1){
-            if(!mySet2.count(n)) ans[0].push_back(n); //Count(n) checks if element n is present in the set
-        }
-```
 ![Set](./assets/set.png)
 
 # Stack
@@ -226,6 +209,11 @@ C++ STL: [pdf Drive link](https://drive.google.com/file/d/13b461lxGsYuF-9cCz-nzh
     set<int> st = { 1, 2, 3, 4, 5, 6};
     auto it = st.find(5);
     cout << *(it);
+
+    // Another way
+    set<int> sett = { 1, 2, 3, 4, 5, 6};
+    int a = 5;
+    if (sett.count(5) > 0) cout << "present in the set"; // it returns 1 if the elemnt is present and 0 if not
 ```
 ## delete a range in set
 ```cpp
