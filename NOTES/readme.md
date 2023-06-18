@@ -6,6 +6,7 @@ Algorithm Repos: [Link to Algorithm Repos](https://github.com/stars/taimourz/lis
 
 Riti Kumari: [pdf Drive link](https://drive.google.com/file/d/1QxwQgbVN4bU9v6I23aMwxSc9qimx9KBj/view?usp=sharing)
 - Trees pdf page no: 78
+- Linked list pdf page no: 30
 
 C++ STL: [pdf Drive link](https://drive.google.com/file/d/13b461lxGsYuF-9cCz-nzhf_KhFLdw3hx/view)
 

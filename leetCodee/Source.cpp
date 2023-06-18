@@ -2,36 +2,73 @@
 #include <algorithm>
 #include <vector>
 #include <unordered_map>
+
 using namespace std;
 
-class graph {
+class Node
+{
 public:
-    unordered_map<int, list<int>> adj;
+    int data;
+    Node* next;
 
-    void addEdge(int u, int v, bool direction) {
-        // direction = 0 -> undirected
-        // direction = 1 -> directed graph
-
-        //create an edge from u to v
-        adj[u].push_back(v);
-
-        if (direction == 0) {
-            adj[v].push_back(u);
-        }
+    Node(int data)
+    {
+        this->data = data;
+        ;
+        this->next = NULL;
     }
 
-    void printAdjList() {
-        for (auto i : adj) {
-            cout << i.first << "->";
-            for (auto j : i.second) {
-                cout << j << ", ";
-            }
-            cout << endl;
+    ~Node()
+    {
+        int value = this->data;
+        if (this->next != NULL)
+        {
+            delete (next);
+            this->next = NULL;
         }
+        cout << endl
+            << "memory free with data " << value << endl;
     }
-
 };
 
+void insertAtHead(Node*& head, int d)
+{
+    Node* temp = new Node(d);
+    temp->next = head;
+    head = temp;
+}
+
+
+void print(Node*& head)
+{
+    Node* temp = head;
+
+    while (temp != NULL)
+    {
+        cout << temp->data << " ";
+        temp = temp->next;
+    }
+}
+
+Node* reverseList(Node* &head)
+{
+
+    Node* curr = head;
+    Node* prev = NULL;
+    Node* next = NULL;
+
+    while (curr != NULL)
+    {
+        next = curr->next;
+        curr->next = prev;
+        prev = curr;
+
+        curr = next;
+    }
+
+    head = prev;
+    return head;
+}
 
 int main()
 {
@@ -41,28 +78,16 @@ int main()
     freopen_s(&inputFile, "input.txt", "r", stdin);    // Redirect standard input to input.txt
     freopen_s(&outputFile, "output.txt", "w", stdout); // Redirect standard output to output.txt
 
-    // taking input the no of nodes
-    int n;
-    cin >> n;
+    vector<vector<int>> times = { {1,1,1}  ,{2,1,3} ,{3,4,1} };
 
-    // taking input the no of edges
-    int m;
-    cin >> m;
+    unordered_map<int, vector<pair<int, int>>> map;
 
-    graph g;
-
-    for (int i = 0; i < m; i++) {
-        int u, v;
-        cin >> u >> v;
-        g.addEdge(u, v, 0); // 0 means that it is an undirected graph
+    for (vector<int> data : times) {
+        map[data[0]].push_back({ data[1], data[2] });
     }
 
 
-    //printing the graph
-    g.printAdjList();
+
 
     return 0;
-
-
-
 }
