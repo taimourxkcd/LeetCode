@@ -35,6 +35,10 @@ for (auto it = myMap.begin(); it != myMap.end(); ++it)
   vector<long long> nums(n);
   vector<vector<int>> res = { {1, 2, 3}, {2, 5, 6}, {1, 2, 3} };
 
+   // creating a 2d matrix with all the enteries as 0. we have +1 row and +1 col here too. 
+   vector<vector<int>> dp(matrix.size() + 1, vector<int>(matrix[0].size() + 1, 0)); 
+
+
   vector<int> v(5,20); // {20,20,20,20,20}
 
  cout << v1.at(0); // same as v[0]
