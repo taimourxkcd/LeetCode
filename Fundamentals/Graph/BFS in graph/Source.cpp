@@ -66,11 +66,7 @@ vector<int> bfs(unordered_map<int, set<int>> &adjList, unordered_map<int, bool> 
 
         ans.push_back(frontNode);
 
-        // Sort the neighbors in ascending order
-        vector<int> neighbors(adjList[frontNode].begin(), adjList[frontNode].end());
-        sort(neighbors.begin(), neighbors.end());
-
-        for (int neighbor : neighbors)
+        for (int neighbor : adjList[frontNode])
         {
             if (!visited[neighbor])
             {

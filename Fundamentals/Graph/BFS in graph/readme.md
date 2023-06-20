@@ -11,4 +11,5 @@
 - get the frontnode from the queue, store it in a variable frontNode and pop it from the queue
 - traverse all the neighbours of frontnode. (The ones you stored in adjacency list)
 - if the neighbours are not visited then push them inside the queue and mark them as visited. dont confuse with the earlier visited(that was for the 
-   node itself, this is for its neighbours).  
+   node itself, this is for its neighbours).
+     
