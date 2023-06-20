@@ -11,8 +11,6 @@ Riti Kumari: [pdf Drive link](https://drive.google.com/file/d/1QxwQgbVN4bU9v6I23
 - Trees pdf page no: 78
 - Linked list pdf page no: 30
 
-C++ STL: [pdf Drive link](https://drive.google.com/file/d/13b461lxGsYuF-9cCz-nzhf_KhFLdw3hx/view)
-
 # OOP
 OOPS NOTES: [pdf Drive link]( https://drive.google.com/file/d/1NXtNY5zQXIUMLcBan-_MpuGN_gnZKTMh/view?usp=sharing)
  
