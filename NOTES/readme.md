@@ -22,6 +22,16 @@ DBMS NOTES: [pdf Drive link](https://drive.google.com/file/d/1XGU4dusm9IV2DzBnuK
 
 # DP
 DYNAMIC PROGRAMMING NOTES: [pdf Drive link](https://drive.google.com/file/d/1TF2Tm1MCD_3HyrPuL1NhC8qmGV3sOs_u/view)
+- 0-1 Knapsack
+- Unbounded Knapsack
+- Fibonnachi
+- Longest Common Subsequence
+- Longest Increasing Subsequence
+- Kadane's Algorithm
+- Matrix Chain Multiplication
+- DP on sets
+- DP on grid
+- Others
 
 # Abdul Bari
 Abdul Bari DSA: [pdf + code github link](https://github.com/Chinmay2660/DSA-By-Abdul-Bari)
