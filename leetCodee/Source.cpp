@@ -7,34 +7,38 @@
 
 using namespace std;
 
-class graph {
+class graph
+{
 public:
     unordered_map<int, list<int>> adj;
 
-    void addEdge(int u, int v, bool direction) {
+    void addEdge(int u, int v, bool direction)
+    {
         // direction = 0 -> undirected
         // direction = 1 -> directed graph
 
-        //create an edge from u to v
+        // create an edge from u to v
         adj[u].push_back(v);
 
-        if (direction == 0) {
+        if (direction == 0)
+        {
             adj[v].push_back(u);
         }
     }
 
-    void printAdjList() {
-        for (auto i : adj) {
+    void printAdjList()
+    {
+        for (auto i : adj)
+        {
             cout << i.first << "->";
-            for (auto j : i.second) {
+            for (auto j : i.second)
+            {
                 cout << j << ", ";
             }
             cout << endl;
         }
     }
-
 };
-
 
 void prepareAdjList(unordered_map<int, set<int>>& adjList, const vector<pair<int, int>>& edges)
 {
@@ -62,11 +66,9 @@ vector<int> bfs(unordered_map<int, set<int>>& adjList, unordered_map<int, bool>&
 
         ans.push_back(frontNode);
 
-        // Sort the neighbors in ascending order
-        vector<int> neighbors(adjList[frontNode].begin(), adjList[frontNode].end());
-        sort(neighbors.begin(), neighbors.end());
 
-        for (int neighbor : neighbors)
+
+        for (int neighbor : adjList[frontNode])
         {
             if (!visited[neighbor])
             {
@@ -112,9 +114,8 @@ vector<int> BFS(int vertex, vector<pair<int, int>> edges)
     return ans;
 }
 
-
-
-int main() {
+int main()
+{
     FILE* inputFile = nullptr;
     FILE* outputFile = nullptr;
     freopen_s(&inputFile, "input.txt", "r", stdin);    // Redirect standard input to input.txt
@@ -130,7 +131,8 @@ int main() {
 
     graph g;
 
-    for (int i = 0; i < m; i++) {
+    for (int i = 0; i < m; i++)
+    {
         int u, v;
         cin >> u >> v;
         g.addEdge(u, v, 0); // 0 means that it is an undirected graph
@@ -141,9 +143,11 @@ int main() {
 
     // Perform BFS
     vector<pair<int, int>> edges;
-    for (const auto& edge : g.adj) {
+    for (const auto& edge : g.adj)
+    {
         int u = edge.first;
-        for (int v : edge.second) {
+        for (int v : edge.second)
+        {
             edges.push_back({ u, v });
         }
     }
@@ -151,7 +155,8 @@ int main() {
     vector<int> result = BFS(n, edges);
 
     cout << "BFS Traversal: ";
-    for (int i : result) {
+    for (int i : result)
+    {
         cout << i << " ";
     }
     cout << endl;
