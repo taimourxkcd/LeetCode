@@ -81,7 +81,82 @@ Trees, LL, Graphs, Stack and Queue, Bit Manipulation, DP: [Link](https://www.lin
   - Convert sorted array to BST
   - Construct BT from preorder and inorder traversal
   - Construct BT from inorder and postorder traversal
-  - Construct BST from preorder traversal  
+  - Construct BST from preorder traversal
+- LinkedList
+  - Reverse a LinkedList  
+  - Middle of a LinkedList  
+  - Delete Node in a LinkedList  
+  - Merge 2 Sorted Lists
+  - Add two numbers I and II
+  - Linked List Cycle I and II
+  - Remove Nth Node from the end of a List
+  - Palindrome LinkedList
+  - Remove Duplicates from a Sorted List
+  - Swapping nodes in a LinkedList
+  - Odd Even Linked List
+  - Swap Nodes in Pairs
+  - Copy List with Random pointer
+  - Reverse Nodes in Kth Group
+  - Design Linked List
+  - Sort List
+- Graph
+  - All paths from source to target
+  - Flood Fill
+  - Number of Islands
+  - Max area of an Island
+  - Find if path exist in a Graph
+  - Find the town judge
+  - Detect Cycle in a Directed Graph
+  - Topological Sort
+  - Course Schedule I and II
+  - Dikstra Algorithm
+  - Network Delay Time
+  - Negative Weight Cycle
+  - Floyd Warshall Algorithm
+  - Min Cost to connect all Points
+  - Is Graph Bipartite
+  - Possible Bipartite
+  - Disjoint Set
+  - Kruskals Algorithm
+  - Critical Connection in a Network
+- Stacks and Queues
+  - Implementation of stack using LL
+  - Implementation of queue using LL
+  - Implementation of stack using queue
+  - Implementation of queue using stack
+  - valid Parenthesis
+  - Asteroid Collision
+  - Next Greater Element
+  - Next Smaller Element
+  - Stock Span Problem
+  - Celebrity Problem
+  - Largest Rectangle in Histogram
+  - Sliding Window Maximum
+- DP
+  - Climbing Stairs
+  - Fibonnachi Number
+  - Min Cost Climbing Stairs
+  - House Robber I and II
+  - Nth Tribonacci Number
+  - 0-1 Knapsack
+  - Partition Equal Subset Sum
+  - Target Sum
+  - Count no of subsets with given difference
+  - Delte and Earn
+  - Knapsack and Duplicate Items
+  - Coin Change I and II
+  - Rod Cutting
+  - Best time to buy and sell stock I and II and III and IV
+  - Best time to buy and sell stock with Cooldown
+  - Best time to buy and sell stock with Transaction Fee
+  - Jump Game I and II
+  - Reach a Given score
+  - Application of Catalan Number
+  - Number of valid parenthesis Expression
+  - Unique Binary search trees
+- Bit Manipulation
+  - no questions just notes
+
 
 
 # Notes
