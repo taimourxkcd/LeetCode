@@ -40,6 +40,48 @@ Abdul Bari DSA: [pdf github link](https://github.com/sakshamgarg6500/Data-Struct
 # LinkedIn
 
 Trees, LL, Graphs, Stack and Queue, Bit Manipulation, DP: [Link](https://www.linkedin.com/feed/update/urn:li:activity:7076391838407888896/?updateEntityUrn=urn%3Ali%3Afs_feedUpdate%3A%28V2%2Curn%3Ali%3Aactivity%3A7076391838407888896%29)
+- Recursion and Backtracking
+  - Power of 2, 3, 4
+  - Subsets I and II
+  - Combination Sum I and II
+  - Rat in a maze
+  - N Queen I and II
+  - Sudoku Solver
+  - Kngiht Tour Problem
+  - Letter Combination of Phone Number
+- Trees
+  - Max depth of Binary Tree
+  - Max depth of N-ary Tree
+  - pre post inorder in binart and n-ary tree
+  - merge 2 binary tree
+  - sum of root to leaf path
+  - uni valued BT
+  - Leaf similar tree
+  - Binary tree path
+  - sum of left leaves
+  - path sum
+  - left view BT  
+  - right view BT
+  - same tree
+  - invert BT
+  - Symmetric tree
+  - Cousin BT
+  - print all nodes that do not have any siblings
+  - all nodes at distance k in binary trees
+  - leverl order traversal in binary and n-ary tree
+  - top view of BT  
+  - Bottom view of BT
+  - Intro to BST and search in a BST
+  - Insert into BST
+  - Increasing order search tree
+  - Two sum IV
+  - Delete Node in a BST
+  - Validate BST
+  - Lowest common ancestor
+  - Convert sorted array to BST
+  - Construct BT from preorder and inorder traversal
+  - Construct BT from inorder and postorder traversal
+  - Construct BST from preorder traversal  
 
 
 # Notes
