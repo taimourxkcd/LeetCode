@@ -40,6 +40,7 @@ Abdul Bari DSA: [pdf github link](https://github.com/sakshamgarg6500/Data-Struct
 # LinkedIn
 
 Trees, LL, Graphs, Stack and Queue, Bit Manipulation, DP: [Link](https://www.linkedin.com/feed/update/urn:li:activity:7076391838407888896/?updateEntityUrn=urn%3Ali%3Afs_feedUpdate%3A%28V2%2Curn%3Ali%3Aactivity%3A7076391838407888896%29)
+ [Github Link](https://github.com/karunkarthik-git/dsa-notes)
 - Recursion and Backtracking
   - Power of 2, 3, 4
   - Subsets I and II
