@@ -12,10 +12,15 @@ Riti Kumari: [pdf Drive link](https://drive.google.com/file/d/1QxwQgbVN4bU9v6I23
 - Trees pdf page no: 78
 - Linked list pdf page no: 30
 
+Trees NOTES: [pdf Drive link](https://drive.google.com/file/d/13AcZJW7oUI8bw_04Ims1Os7x5ASYLztK/view)
+
+OS NOTES: [pdf Drive link](https://drive.google.com/file/d/1Qpc_gzY-M0mCLU9Nm6rZdycOkqvHBYPD/view?usp=sharing)
+
+ 
+
 # OOP
 OOPS NOTES: [pdf Drive link]( https://drive.google.com/file/d/1NXtNY5zQXIUMLcBan-_MpuGN_gnZKTMh/view?usp=sharing)
  
-OOPS NOTES: [pdf Drive link](https://drive.google.com/file/d/13AcZJW7oUI8bw_04Ims1Os7x5ASYLztK/view)
 
 # DBMS
 DBMS NOTES: [pdf Drive link](https://drive.google.com/file/d/1XGU4dusm9IV2DzBnuKhrrM_o7hUIt7NT/view)
