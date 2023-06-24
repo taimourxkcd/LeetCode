@@ -29,24 +29,35 @@ for (auto it = myMap.begin(); it != myMap.end(); ++it)
 
 ```cpp
   vector<int> ans(2 * n);
-  vector<int> result(height.size() * height.size());
-  vector<vector<int>> nums(n, vector<int>(n));
-  vector<vector<int>> ans(2, vector<int>());
   vector<long long> nums(n);
+
+  // create with some initial data
   vector<vector<int>> res = { {1, 2, 3}, {2, 5, 6}, {1, 2, 3} };
+
+  // create with specific no of rows
+  vector<int> result(height.size() * height.size());
+
+  // create with specific no of rows but no specific cols
+  vector<vector<int>> ans(2, vector<int>());
+  vector<vector<int>> edges(V, vector<int>());
+
+// create with specific no of rows and cols
+  vector<vector<int>> nums(n, vector<int>(n));
 
    // creating a 2d matrix with all the enteries as 0. we have +1 row and +1 col here too. 
    vector<vector<int>> dp(matrix.size() + 1, vector<int>(matrix[0].size() + 1, 0)); 
 
-
+// create with some initial dummy data for all the enteries
   vector<int> v(5,20); // {20,20,20,20,20}
 
  cout << v1.at(0); // same as v[0]
 
+// dealoing with matrices
   int row = image.size();
   int col = image[0].size();
   vector<vector<int>> ans(row, vector<int>(col));
 
+// vector of pairs
   vector<pair<int, int>> ans;
   ans.push_back({c, i}); 
 
