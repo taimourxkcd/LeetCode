@@ -1,80 +1,108 @@
-#include <bits/stdc++.h>
+#include <iostream>
 #include <unordered_map>
-#include <queue>
 #include <list>
+#include <vector>
 #include <set>
-void prepareAdjList(unordered_map<int, set<int>> &adjList, const vector<pair<int, int>> &edges)
+
+using namespace std;
+
+class graph
 {
-    for (const auto &edge : edges)
+public:
+    unordered_map<int, list<int>> adj;
+
+    void addEdge(int u, int v, bool direction)
     {
-        int u = edge.first;
-        int v = edge.second;
+        // direction = 0 -> undirected
+        // direction = 1 -> directed graph
 
-        adjList[u].insert(v);
-        adjList[v].insert(u);
+        // create an edge from u to v
+        adj[u].push_back(v);
+
+        if (direction == 0)
+        {
+            adj[v].push_back(u);
+        }
     }
-}
 
-vector<int> bfs(unordered_map<int, set<int>> &adjList, unordered_map<int, bool> &visited, vector<int> &ans, int node)
+    void printAdjList()
+    {
+        for (auto i : adj)
+        {
+            cout << i.first << "->";
+            for (auto j : i.second)
+            {
+                cout << j << ", ";
+            }
+            cout << endl;
+        }
+    }
+};
+
+void dfs(int node, unordered_map<int, bool> &visited,
+         unordered_map<int, set<int>> &adj, vector<int> &component)
 {
-    queue<int> q;
 
-    q.push(node);
+    component.push_back(node);
     visited[node] = true;
 
-    while (!q.empty())
-    {
-        int frontNode = q.front();
-        q.pop();
-
-        ans.push_back(frontNode);
-
-        // Sort the neighbors in ascending order
-        vector<int> neighbors(adjList[frontNode].begin(), adjList[frontNode].end());
-        sort(neighbors.begin(), neighbors.end());
-
-        for (int neighbor : neighbors)
-        {
-            if (!visited[neighbor])
-            {
-                q.push(neighbor);
-                visited[neighbor] = true;
-            }
-        }
-    }
-
-    return ans;
-}
-
-void printAdj(unordered_map<int, set<int>> &adjList)
-{
-    for (auto i : adjList)
-    {
-        cout << i.first << " -> ";
-        for (auto j : i.second)
-        {
-            cout << j << " ";
-        }
-        cout << endl;
-    }
-}
-
-vector<int> BFS(int vertex, vector<pair<int, int>> edges)
-{
-    unordered_map<int, set<int>> adjList;
-    vector<int> ans;
-    unordered_map<int, bool> visited;
-
-    prepareAdjList(adjList, edges);
-
-    // Traverse all nodes from 0 to vertex-1
-    for (int i = 0; i < vertex; i++)
+    // recursive call for every connected node
+    for (auto i : adj[node])
     {
         if (!visited[i])
         {
-            bfs(adjList, visited, ans, i);
+            dfs(i, visited, adj, component);
+        }
+    }
+}
+
+int main()
+{
+    FILE *inputFile = nullptr;
+    FILE *outputFile = nullptr;
+    freopen_s(&inputFile, "input.txt", "r", stdin);    // Redirect standard input to input.txt
+    freopen_s(&outputFile, "output.txt", "w", stdout); // Redirect standard output to output.txt
+
+    // Taking input the number of nodes
+    int V;
+    cin >> V;
+
+    // Taking input the number of edges
+    int E;
+    cin >> E;
+
+    graph g;
+
+    for (int i = 0; i < E; i++)
+    {
+        int u, v;
+        cin >> u >> v;
+        g.addEdge(u, v, false);
+    }
+
+    // DFS
+    unordered_map<int, set<int>> adjList = g.adj;
+
+    vector<vector<int>> ans;
+    unordered_map<int, bool> visited;
+
+    for (int i = 0; i < V; i++)
+    {
+        if (!visited[i])
+        {
+            vector<int> component;
+            dfs(i, visited, adjList, component);
+            ans.push_back(component);
         }
     }
 
-    return ans;
+    cout << "DFS Traversal: ";
+    for (vector<int> i : ans)
+    {
+        for (int n : i)
+            cout << n << " ";
+        cout << endl;
+    }
+
+    return 0;
 }
