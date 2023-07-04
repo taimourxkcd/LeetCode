@@ -221,6 +221,10 @@ C++ STL: [pdf Drive link](https://drive.google.com/file/d/13b461lxGsYuF-9cCz-nzh
 
     if(st.find(x) != st.find(6)); // if true element is present in the set
 
+    // another way
+    unordered_set<int> visited;
+    if (visited.count(n)) ; // the number exists in the set
+
     set<int> st = { 1, 2, 3, 4, 5, 6};
     auto it = st.find(5);
     cout << *(it);
