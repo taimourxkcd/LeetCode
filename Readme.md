@@ -8,3 +8,9 @@
  - https://cpppatterns.com/ 
  - https://algorithm-visualizer.org/
  - https://clementmihailescu.github.io/Sorting-Visualizer/
+
+ - Youtube
+ - https://www.youtube.com/@CodeHelp
+ - https://www.youtube.com/@takeUforward
+ - https://www.youtube.com/@probabilitycodingisfunis1
+ - https://www.youtube.com/@iamluv/videos
