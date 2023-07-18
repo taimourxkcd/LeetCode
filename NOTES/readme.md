@@ -118,7 +118,7 @@ Trees, LL, Graphs, Stack and Queue, Bit Manipulation, DP: [Link](https://www.lin
   - Negative Weight Cycle
   - Floyd Warshall Algorithm
   - Min Cost to connect all Points
-  - Is Graph Bipartite
+  - &#10003; Is Graph Bipartite
   - Possible Bipartite
   - Disjoint Set
   - Kruskals Algorithm
