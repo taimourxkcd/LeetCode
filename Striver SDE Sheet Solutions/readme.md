@@ -24,3 +24,7 @@ SDE Sheet by Striver: [linkedin Link to SDE Sheet](https://www.linkedin.com/feed
   - Length of the Longest Subarray with zero sum
   - Count the number of subarrays with given XOR k
   -  Lenght of the longest substring without repeating character
+ 
+    #  Links
+  - Sort an array of 0s, 1s and 2s https://github.com/taimourz/LeetCode/tree/master/My%20Leetcode%20Solutions/94-sortColors
+  - Pascal triangle, https://github.com/taimourz/LeetCode/tree/master/My%20Leetcode%20Solutions/47-pascalsTriangle
