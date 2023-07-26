@@ -1,14 +1,14 @@
 # SDE Striver Sheet
 SDE Sheet by Striver: [linkedin Link to SDE Sheet](https://www.linkedin.com/feed/update/urn:li:activity:7064421688834195456/?updateEntityUrn=urn%3Ali%3Afs_feedUpdate%3A%28V2%2Curn%3Ali%3Aactivity%3A7064421688834195456%29)
 - 24 Questions in total
-  - set matrix zeros DAY 1
-  - pascal triangle
+  -  &#10003; set matrix zeros DAY 1
+  -  &#10003; pascal triangle
   - next permutation
-  - maximum subarray
-  - sort an array of 0s, 1s and 2s
-  - Rotate Image DAY 2
-  - Merge Intervals
-  - Merge Sorted array in O(1) Space
+  -  &#10003; maximum subarray
+  -  &#10003; sort an array of 0s, 1s and 2s
+  -  &#10003; Rotate Image DAY 2
+  -  &#10003; Merge Intervals
+  -  &#10003; Merge Sorted array in O(1) Space
   - Find the duplicate number
   - Find the repeating and missisng number
   - Inversion of Array
