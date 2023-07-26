@@ -9,8 +9,8 @@ SDE Sheet by Striver: [linkedin Link to SDE Sheet](https://www.linkedin.com/feed
   -  &#10003; Rotate Image DAY 2
   -  &#10003; Merge Intervals
   -  &#10003; Merge Sorted array in O(1) Space
-  - Find the duplicate number
-  - Find the repeating and missisng number
+  -  &#10003; Find the duplicate number
+  -  &#10003; Find the repeating and missisng number
   - Inversion of Array
   - Search in a sorted 2D matrix DAY 3
   - Paw(x, n)
