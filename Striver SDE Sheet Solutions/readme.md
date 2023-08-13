@@ -12,11 +12,11 @@ SDE Sheet by Striver: [linkedin Link to SDE Sheet](https://www.linkedin.com/feed
   -  &#10003; Find the duplicate number
   -  &#10003; Find the repeating and missisng number
   - Inversion of Array
-  - Search in a sorted 2D matrix DAY 3
-  - Paw(x, n)
-  - Find the majority element that occurs more then (N/2) times
-  - Majority Elements
-  - Unique grid paths
+  - &#10003; Search in a sorted 2D matrix DAY 3
+  - &#10003; Pow(x, n)
+  - &#10003; Find the majority element that occurs more then (N/2) times
+  - &#10003; Majority Elements
+  - &#10003; Unique grid paths
   - Count reverse pairs
   - Two sum DAY 4
   - 4 sum problem

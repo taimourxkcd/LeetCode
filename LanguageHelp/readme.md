@@ -265,5 +265,17 @@ C++ STL: [pdf Drive link](https://drive.google.com/file/d/13b461lxGsYuF-9cCz-nzh
   ```
     for (int i : nums)
         map1[i]++;
+
+        // search in a hashmap
+  if(visited.count(n)) return false;
+
+    //  taverse a hash map
+    for(const auto& num : map1){
+        if(num.second > n) return num.first;
+     }
+
+    // memoize matrix 
+      vector<vector<int>> dp(m, vector<int>(n, -1)); 
+
     ```
 
