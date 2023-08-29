@@ -108,6 +108,13 @@ int height(Node* node) {
 
 }
 
+int maxDepth(TreeNode* root){
+        if(root == NULL) return 0;
+        
+        int left =  1 + helper(root->left);
+        int right = 1 + helper(root->right);
+        return max(left, right);
+    }
 
 int main()
 {
