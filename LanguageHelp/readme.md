@@ -261,8 +261,8 @@ C++ STL: [pdf Drive link](https://drive.google.com/file/d/13b461lxGsYuF-9cCz-nzh
 
 ```
 # Common things to do
+  ```cpp
 - update the occurances of elements in a hashmap
-  ```
     for (int i : nums)
         map1[i]++;
 
@@ -279,5 +279,6 @@ C++ STL: [pdf Drive link](https://drive.google.com/file/d/13b461lxGsYuF-9cCz-nzh
 
   // remove the character from the map
    map.erase(order[i]); // the character present at order[i] would be removed from the map 
-    ```
+
+```
 
