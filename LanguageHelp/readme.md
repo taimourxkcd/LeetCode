@@ -275,7 +275,9 @@ C++ STL: [pdf Drive link](https://drive.google.com/file/d/13b461lxGsYuF-9cCz-nzh
      }
 
     // memoize matrix 
-      vector<vector<int>> dp(m, vector<int>(n, -1)); 
+      vector<vector<int>> dp(m, vector<int>(n, -1));
 
+  // remove the character from the map
+   map.erase(order[i]); // the character present at order[i] would be removed from the map 
     ```
 
