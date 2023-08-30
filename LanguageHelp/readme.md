@@ -280,7 +280,15 @@ C++ STL: [pdf Drive link](https://drive.google.com/file/d/13b461lxGsYuF-9cCz-nzh
       vector<vector<int>> dp(m, vector<int>(n, -1));
 
   // remove the character from the map
-   map.erase(order[i]); // the character present at order[i] would be removed from the map 
+   map.erase(order[i]); // the character present at order[i] would be removed from the map
+
+// append all the characters inside the map into the string
+   while(!map.empty()) {
+        auto it = map.begin(); 
+        res += std::string(it->second, it->first); // if c->3 then returns ccc
+        map.erase(it->first); 
+    } 	
+
 
 ```
 
