@@ -261,7 +261,9 @@ C++ STL: [pdf Drive link](https://drive.google.com/file/d/13b461lxGsYuF-9cCz-nzh
 
 ```
 # Common things to do
-  ```cpp
+
+```cpp
+
 - update the occurances of elements in a hashmap
     for (int i : nums)
         map1[i]++;
