@@ -22,6 +22,11 @@ for (auto it = myMap.begin(); it != myMap.end(); ++it)
     }
 
      for(int i : nums) map1[i]++; // find occurences
+
+	// print a hash map
+    for (const auto& pair : map1) {
+        cout << pair.first << " " << pair.second << endl;
+    }
 ```
 ![Map](./assets/map.png)
 
