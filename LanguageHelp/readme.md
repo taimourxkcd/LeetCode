@@ -29,6 +29,13 @@ for (auto it = myMap.begin(); it != myMap.end(); ++it)
     for (const auto& pair : map1) {
         cout << pair.first << " " << pair.second << endl;
     }
+
+   // iterate a map
+        for(auto it:map1){
+            countPair += it.second/2;
+            countInt += it.second%2;
+        }
+  
 ```
 ![Map](./assets/map.png)
 
