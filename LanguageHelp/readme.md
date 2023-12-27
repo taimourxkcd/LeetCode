@@ -80,6 +80,12 @@ for (auto it = myMap.begin(); it != myMap.end(); ++it)
     // reseize a vector to a new size
     nums.resize(n);
 
+// easy way to iterate a vector of vector
+items1 = [[1,1],[4,5],[3,8]]
+for (int i = 0; i < items1.size(); i++) {
+	map[items1[i][0]] = items1[i][1];
+}
+
   ```
 ![Vector](./assets/vector.png)
 # Sets
