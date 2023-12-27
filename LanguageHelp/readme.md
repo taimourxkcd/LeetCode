@@ -85,6 +85,10 @@ items1 = [[1,1],[4,5],[3,8]]
 for (int i = 0; i < items1.size(); i++) {
 	map[items1[i][0]] = items1[i][1];
 }
+OR
+for (const auto& item : items1) {
+   map[item[0]] = item[1];
+}
 
   ```
 ![Vector](./assets/vector.png)
