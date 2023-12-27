@@ -311,7 +311,12 @@ C++ STL: [pdf Drive link](https://drive.google.com/file/d/13b461lxGsYuF-9cCz-nzh
         auto it = map.begin(); 
         res += std::string(it->second, it->first); // if c->3 then returns ccc
         map.erase(it->first); 
-    } 	
+    }
+
+//create a hash map of a to z
+for (char ch = 'a'; ch <= 'z'; ch++) {
+   map[ch] = ch - 'a';
+}
 
 
 ```
